@@ -7,9 +7,9 @@ public class PersonajesJson
     public void GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
     {
         // Guarda la lista de personajes en formato Json en el archivo
-        Console.WriteLine("╔═════════════════════════════════════════════════════");
+        Console.WriteLine("╔════════════════════════════════════════════════════════╗");
         Console.WriteLine($"║Guardando personajes en el archivo '{nombreArchivo}'... ║");
-        Console.WriteLine("╚═════════════════════════════════════════════════════");
+        Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         Console.WriteLine();
     }
 
@@ -25,7 +25,7 @@ public class PersonajesJson
     public bool Existe(string nombreArchivo)
     {
         // Verifica si el archivo existe y si tiene datos
-        Console.WriteLine("╔═══════════════════════════════════════════════════════╗");
+        Console.WriteLine("╔════════════════════════════════════════════════════════╗");
         Console.WriteLine($"║Verificando existencia del archivo '{nombreArchivo}'... ║");
         Console.WriteLine("╚════════════════════════════════════════════════════════╝");
         Console.WriteLine();
