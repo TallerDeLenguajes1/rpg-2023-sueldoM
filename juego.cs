@@ -23,6 +23,7 @@ public class Juego
         personajes.Add(personaje);
     }
 
+    
     public void IniciarCombate()
     {
         // Elege 2 personajes aleatorios
@@ -33,9 +34,9 @@ public class Juego
         Console.WriteLine("¡Comienza el combate!");
         Console.WriteLine("══════════════════════");
         Console.WriteLine(" ");
-        Console.WriteLine("═════════════════════════════════════════════");
-        Console.WriteLine($"{personaje1.Nombre} ║vs║ {personaje2.Nombre}");
-        Console.WriteLine("═════════════════════════════════════════════");
+        Console.WriteLine("╔════════════════════════════════════");
+        Console.WriteLine($"║{personaje1.Nombre} ║vs║ {personaje2.Nombre}");
+        Console.WriteLine("╚════════════════════════════════════");
         Console.WriteLine(" ");
 
         // Variables para llevar el control del turno actual
@@ -48,7 +49,7 @@ public class Juego
         {
             Console.WriteLine("╔════════╗");
             Console.WriteLine($"║Turno {turno} ║");
-            Console.WriteLine("╠═════════════════════════════╗");
+            Console.WriteLine("╠════════╩════════════════════╗");
             Console.WriteLine($"║{atacante.Nombre} [══[===========- {defensor.Nombre}║");
             Console.WriteLine("╚═════════════════════════════╝");
             Console.WriteLine(" ");
