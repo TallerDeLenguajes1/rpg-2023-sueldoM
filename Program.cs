@@ -36,16 +36,19 @@ class Program
         }
 
         // Mostrar los datos y características de los personajes cargados
-        Console.WriteLine("Personajes cargados:");
+        Console.WriteLine("╔════════════════════");
+        Console.WriteLine("║Personajes cargados:");
         foreach (Personaje personaje in juego.Personajes)
         {
-            Console.WriteLine($"Nombre: {personaje.Nombre}");
-            Console.WriteLine($"Velocidad: {personaje.Velocidad}");
-            Console.WriteLine($"Destreza: {personaje.Destreza}");
-            Console.WriteLine($"Fuerza: {personaje.Fuerza}");
-            Console.WriteLine($"Nivel: {personaje.Nivel}");
-            Console.WriteLine($"Armadura: {personaje.Armadura}");
-            Console.WriteLine($"Salud: {personaje.Salud}");
+            Console.WriteLine($"║Nombre: {personaje.Nombre}");
+            Console.WriteLine("╠══════════════════════");
+            Console.WriteLine($"║Velocidad: {personaje.Velocidad}");
+            Console.WriteLine($"║Destreza: {personaje.Destreza}");
+            Console.WriteLine($"║Fuerza: {personaje.Fuerza}");
+            Console.WriteLine($"║Nivel: {personaje.Nivel}");
+            Console.WriteLine($"║Armadura: {personaje.Armadura}");
+            Console.WriteLine($"║Salud: {personaje.Salud}");
+            Console.WriteLine("╚═══════════════════════");
             Console.WriteLine();
         }
 
