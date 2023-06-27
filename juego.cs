@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-
+namespace JuegoRPG
+{
 public class Juego
 {
     private List<Personaje> personajes;
@@ -8,6 +9,7 @@ public class Juego
     private FabricaDePersonajes fabrica;
     private PersonajesJson persistencia;
 
+    public List<Personaje> Personajes { get { return personajes; } }
     public Juego()
     {
         personajes = new List<Personaje>();
@@ -87,4 +89,5 @@ public class Juego
         Console.WriteLine($"Salud mejorada: {personaje.Salud}");
         Console.WriteLine($"Armadura mejorada: {personaje.Armadura}");
     }
+}
 }

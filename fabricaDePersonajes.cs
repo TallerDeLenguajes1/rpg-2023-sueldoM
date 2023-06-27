@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+namespace JuegoRPG
+{
+    
 
 public class FabricaDePersonajes
 {
@@ -29,4 +32,5 @@ public class FabricaDePersonajes
         int index = random.Next(nombres.Length);
         return nombres[index];
     }
+}
 }

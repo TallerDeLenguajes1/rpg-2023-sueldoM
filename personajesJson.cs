@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-
+namespace JuegoRPG
+{
 public class PersonajesJson
 {
     public void GuardarPersonajes(List<Personaje> personajes, string nombreArchivo)
@@ -22,4 +23,5 @@ public class PersonajesJson
         Console.WriteLine($"Verificando existencia del archivo '{nombreArchivo}'...");
         return false;
     }
+}
 }

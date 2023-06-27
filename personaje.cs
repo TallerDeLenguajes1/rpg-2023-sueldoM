@@ -1,4 +1,5 @@
 using System;
+namespace JuegoRPG;
 
 public class Personaje
 {
