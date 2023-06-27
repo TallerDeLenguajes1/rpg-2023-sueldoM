@@ -29,8 +29,14 @@ public class Juego
         Personaje personaje1 = ElegirPersonajeAleatorio();
         Personaje personaje2 = ElegirPersonajeAleatorio();
 
+        Console.WriteLine("══════════════════════");
         Console.WriteLine("¡Comienza el combate!");
-        Console.WriteLine($"{personaje1.Nombre} vs {personaje2.Nombre}");
+        Console.WriteLine("══════════════════════");
+        Console.WriteLine(" ");
+        Console.WriteLine("═════════════════════════════════════════════");
+        Console.WriteLine($"{personaje1.Nombre} ║vs║ {personaje2.Nombre}");
+        Console.WriteLine("═════════════════════════════════════════════");
+        Console.WriteLine(" ");
 
         // Variables para llevar el control del turno actual
         int turno = 1;
@@ -40,9 +46,12 @@ public class Juego
         // Sistema de combate
         while (atacante.Salud > 0 && defensor.Salud > 0)
         {
-            Console.WriteLine($"Turno {turno}");
-            Console.WriteLine($"{atacante.Nombre} ataca a {defensor.Nombre}");
-
+            Console.WriteLine("╔════════╗");
+            Console.WriteLine($"║Turno {turno} ║");
+            Console.WriteLine("╠═════════════════════════════╗");
+            Console.WriteLine($"║{atacante.Nombre} [══[===========- {defensor.Nombre}║");
+            Console.WriteLine("╚═════════════════════════════╝");
+            Console.WriteLine(" ");
             // Calcula el daño provocado
             int ataque = atacante.Destreza * atacante.Fuerza * atacante.Nivel;
             int efectividad = random.Next(1, 101);
@@ -52,7 +61,10 @@ public class Juego
             
             defensor.Salud -= dañoProvocado; // Actualiza la salud del personaje defensor
 
-            Console.WriteLine($"Daño provocado: {dañoProvocado}");
+            Console.WriteLine("╔════════════════════════╗");
+            Console.WriteLine($"║Has provocado: {dañoProvocado} de Daño║");
+            Console.WriteLine("╚════════════════════════╝");
+            Console.WriteLine(" ");
 
             // Cambia roles de atacante y defensor
             Personaje temp = atacante;
@@ -64,9 +76,12 @@ public class Juego
 
         // Determinara al ganador y otorgara la mejora de habilidades
         Personaje ganador = (personaje1.Salud <= 0) ? personaje2 : personaje1;
-
+        Console.WriteLine(" ");
+        Console.WriteLine("═════════════════════════");
         Console.WriteLine("¡Fin del combate!");
         Console.WriteLine($"{ganador.Nombre} es el ganador");
+        Console.WriteLine("═════════════════════════");
+
 
         // Otorgara mejora de habilidades al ganador
         MejorarHabilidades(ganador);
@@ -80,6 +95,8 @@ public class Juego
 
     private void MejorarHabilidades(Personaje personaje)
     {
+        Console.WriteLine(" ");
+        Console.WriteLine("═════════════════════════");
         Console.WriteLine($"{personaje.Nombre} ha sido mejorado:");
 
         //Mejorar en salud o defensa
@@ -88,6 +105,7 @@ public class Juego
 
         Console.WriteLine($"Salud mejorada: {personaje.Salud}");
         Console.WriteLine($"Armadura mejorada: {personaje.Armadura}");
+        Console.WriteLine("═════════════════════════");
     }
 }
 }
