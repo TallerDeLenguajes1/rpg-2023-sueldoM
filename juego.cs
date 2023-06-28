@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.Net.Http;
 namespace JuegoRPG
 {
 public class Juego
@@ -10,12 +12,15 @@ public class Juego
     private PersonajesJson persistencia;
 
     public List<Personaje> Personajes { get { return personajes; } }
+
+    private HttpClient httpClient;
     public Juego()
     {
         personajes = new List<Personaje>();
         random = new Random();
         fabrica = new FabricaDePersonajes();
         persistencia = new PersonajesJson();
+        httpClient = new HttpClient();
     }
 
     public void AgregarPersonaje(Personaje personaje)
@@ -23,8 +28,7 @@ public class Juego
         personajes.Add(personaje);
     }
 
-    
-    public void IniciarCombate()
+    public async Task IniciarCombate()
     {
         // Elege 2 personajes aleatorios
         Personaje personaje1 = ElegirPersonajeAleatorio();
@@ -49,6 +53,8 @@ public class Juego
         {
             Console.WriteLine("╔════════╗");
             Console.WriteLine($"║Turno {turno} ║");
+            string insultoJson = await httpClient.GetStringAsync("https://evilinsult.com/generate_insult.php?lang=en&type=json");
+            Insulto? insulto = JsonConvert.DeserializeObject<Insulto>(insultoJson);
             Console.WriteLine("╠════════╩════════════════════╗");
             Console.WriteLine($"║{atacante.Nombre} [══[===========- {defensor.Nombre}║");
             Console.WriteLine("╚═════════════════════════════╝");
@@ -65,6 +71,7 @@ public class Juego
             Console.WriteLine("╔════════════════════════╗");
             Console.WriteLine($"║Has provocado: {dañoProvocado} de Daño║");
             Console.WriteLine("╚════════════════════════╝");
+            Console.WriteLine($"Insulto: {insulto?.Insult}");
             Console.WriteLine(" ");
 
             // Cambia roles de atacante y defensor
