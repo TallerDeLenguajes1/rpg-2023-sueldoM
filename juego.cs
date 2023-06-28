@@ -74,11 +74,11 @@ public class Juego
             Console.WriteLine("╔════════════════════════╗");
             Console.WriteLine($"║Has provocado: {dañoProvocado} de Daño║");
             Console.WriteLine("╚════════════════════════╝");
-            Console.WriteLine("════════════════════════════════════════════════════════════");
+            Console.WriteLine("════════════════════════════════════════════════════════════════════════════════");
             Console.WriteLine($"{atacante.Nombre}: - {insulto?.Insult} -");
-            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine("--------------------------------------------------------------------------------");
             Console.WriteLine($"{defensor.Nombre}: - {insulto2?.Insult} -");
-            Console.WriteLine("════════════════════════════════════════════════════════════");
+            Console.WriteLine("════════════════════════════════════════════════════════════════════════════════");
             Console.WriteLine();
 
             // Cambia roles de atacante y defensor
