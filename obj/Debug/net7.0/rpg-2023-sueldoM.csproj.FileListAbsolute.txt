@@ -13,3 +13,5 @@ C:\taller1\proyectorpg\rpg-2023-sueldoM\obj\Debug\net7.0\refint\rpg-2023-sueldoM
 C:\taller1\proyectorpg\rpg-2023-sueldoM\obj\Debug\net7.0\rpg-2023-sueldoM.pdb
 C:\taller1\proyectorpg\rpg-2023-sueldoM\obj\Debug\net7.0\rpg-2023-sueldoM.genruntimeconfig.cache
 C:\taller1\proyectorpg\rpg-2023-sueldoM\obj\Debug\net7.0\ref\rpg-2023-sueldoM.dll
+C:\taller1\proyectorpg\rpg-2023-sueldoM\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\taller1\proyectorpg\rpg-2023-sueldoM\obj\Debug\net7.0\rpg-2023-sueldoM.csproj.CopyComplete

@@ -51,12 +51,15 @@ public class Juego
         // Sistema de combate
         while (atacante.Salud > 0 && defensor.Salud > 0)
         {
+            string insultoJson = await httpClient.GetStringAsync("https://evilinsult.com/generate_insult.php?lang=en&type=json");
+            string insultoJson2 = await httpClient.GetStringAsync("https://evilinsult.com/generate_insult.php?lang=en&type=json");
+            Insulto? insulto = JsonConvert.DeserializeObject<Insulto>(insultoJson);
+            Insulto? insulto2 = JsonConvert.DeserializeObject<Insulto>(insultoJson2);
+
             Console.WriteLine("╔════════╗");
             Console.WriteLine($"║Turno {turno} ║");
-            string insultoJson = await httpClient.GetStringAsync("https://evilinsult.com/generate_insult.php?lang=en&type=json");
-            Insulto? insulto = JsonConvert.DeserializeObject<Insulto>(insultoJson);
             Console.WriteLine("╠════════╩════════════════════╗");
-            Console.WriteLine($"║{atacante.Nombre} [══[===========- {defensor.Nombre}║");
+            Console.WriteLine($"║{atacante.Nombre} [═[===========- {defensor.Nombre}║");
             Console.WriteLine("╚═════════════════════════════╝");
             Console.WriteLine(" ");
             // Calcula el daño provocado
@@ -71,8 +74,12 @@ public class Juego
             Console.WriteLine("╔════════════════════════╗");
             Console.WriteLine($"║Has provocado: {dañoProvocado} de Daño║");
             Console.WriteLine("╚════════════════════════╝");
-            Console.WriteLine($"Insulto: {insulto?.Insult}");
-            Console.WriteLine(" ");
+            Console.WriteLine("════════════════════════════════════════════════════════════");
+            Console.WriteLine($"{atacante.Nombre}: - {insulto?.Insult} -");
+            Console.WriteLine("------------------------------------------------------------");
+            Console.WriteLine($"{defensor.Nombre}: - {insulto2?.Insult} -");
+            Console.WriteLine("════════════════════════════════════════════════════════════");
+            Console.WriteLine();
 
             // Cambia roles de atacante y defensor
             Personaje temp = atacante;

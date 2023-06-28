@@ -2,7 +2,7 @@
 namespace JuegoRPG{
 class Program
 {
-    static async void Main(string[] args)
+    static void Main(string[] args)
     {
         Juego juego = new Juego();
 
@@ -53,7 +53,7 @@ class Program
         }
 
         // Iniciar el combate
-        await juego.IniciarCombate();
+        juego.IniciarCombate().Wait();
     }
 }
 }
